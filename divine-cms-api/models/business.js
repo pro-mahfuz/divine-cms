@@ -38,6 +38,10 @@ export default (sequelize, DataTypes) => {
       foreignKey: "businessId",
       as: "roles"
     });
+    Business.hasMany(models.Lead, {
+      foreignKey: "businessId",
+      as: "leads"
+    });
   };
 
   return Business;

@@ -43,6 +43,7 @@ import defineWarehouse from './warehouse.js';
 import defineBank from './bank.js';
 import defineStock from './stock.js';
 import defineGoldPriceIn from './goldPriceIn.js';
+import defineLead from './lead.js';
 
 // define your model here...
 const StatusType = defineStatusType(sequelize, Sequelize.DataTypes);
@@ -65,9 +66,10 @@ const Payment = definePayment(sequelize, Sequelize.DataTypes);
 const Stock = defineStock(sequelize, Sequelize.DataTypes);
 const GoldPriceIn = defineGoldPriceIn(sequelize, Sequelize.DataTypes);
 const Ledger = defineLedger(sequelize, Sequelize.DataTypes);
+const Lead = defineLead(sequelize, Sequelize.DataTypes);
 
 // define your model for associate relations here...
-const models = { Business, StatusType, Role, Permission, RolePermission, User, Profile,  TokenStore, Party, Category, Unit, Item, Invoice, InvoiceItem, Payment, Warehouse, Bank, Stock, GoldPriceIn, Ledger };
+const models = { Business, StatusType, Role, Permission, RolePermission, User, Profile,  TokenStore, Party, Category, Unit, Item, Invoice, InvoiceItem, Payment, Warehouse, Bank, Stock, GoldPriceIn, Ledger, Lead };
 // Call associate on each model if defined
 Object.values(models).forEach((model) => {
   if (model.associate) {
@@ -97,6 +99,7 @@ export {
   Warehouse,
   Bank,
   Stock,
-  GoldPriceIn
+  GoldPriceIn,
+  Lead
 
 };

@@ -18,6 +18,7 @@ import { stockSchema, stockTransferSchema } from "../modules/stock/stock.validat
 import { warehouseSchema } from "../modules/warehouse/warehouse.validator.js";
 import { bankSchema } from "../modules/bank/bank.validator.js";
 import { goldPriceInSchema } from "../modules/goldPriceIn/goldPriceIn.validator.js";
+import { leadSchema } from "../modules/lead/lead.validator.js";
 
 import * as BusinessController from "../modules/business/business.controller.js";
 import * as UserController from "../modules/user/user.controller.js";
@@ -37,6 +38,7 @@ import * as WarehouseController from "../modules/warehouse/warehouse.controller.
 import * as BankController from "../modules/bank/bank.controller.js";
 import * as LedgerController from "../modules/ledger/ledger.controller.js";
 import * as GoldPriceInController from "../modules/goldPriceIn/goldPriceIn.controller.js";
+import * as LeadController from "../modules/lead/lead.controller.js";
 
 const router = Router();
 
@@ -176,6 +178,13 @@ router.post("/gold-price-in/create", validate(goldPriceInSchema), GoldPriceInCon
 router.get("/gold-price-in/:id/view", GoldPriceInController.getGoldPriceInById);
 router.put("/gold-price-in/update", validate(goldPriceInSchema), GoldPriceInController.updateGoldPriceIn);
 router.post("/gold-price-in/:id/delete", GoldPriceInController.deleteGoldPriceIn);
+
+/*---Lead---*/
+router.get("/lead/list", authorize("manage_dashboard"), LeadController.getAllLeads);
+router.get("/lead/:id/view", authorize("manage_dashboard"), LeadController.getLeadById);
+router.post("/lead/create", authorize("manage_dashboard"), validate(leadSchema), LeadController.createLead);
+router.put("/lead/:id", authorize("manage_dashboard"), validate(leadSchema), LeadController.updateLead);
+router.post("/lead/:id/delete", authorize("manage_dashboard"), LeadController.deleteLead);
 
 /*---Currency ledger---*/
 router.get("/ledger/list", authorize(["manage_ledger", "currency_ledger"]), LedgerController.getAllLedger);

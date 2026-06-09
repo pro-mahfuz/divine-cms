@@ -69,6 +69,9 @@ import GoldPriceInList from "./modules/goldPriceIn/pages/GoldPriceInList";
 import GoldConverter from "./modules/goldPriceIn/pages/GoldConverter";
 import BoriPriceIn from "./modules/goldPriceIn/pages/BoriPriceIn";
 import BaseCurrencySettings from "./modules/settings/pages/BaseCurrencySettings";
+import LeadCreateForm from "./modules/lead/pages/LeadCreateForm";
+import LeadEditForm from "./modules/lead/pages/LeadEditForm";
+import LeadList from "./modules/lead/pages/LeadList";
 
 
 export default function App() {
@@ -90,6 +93,25 @@ export default function App() {
               <PrivateRoute permissions={['manage_dashboard']}>
                 <Home />
               </PrivateRoute>} 
+            />
+
+            {/* Lead */}
+            <Route index path="/lead/list" element={
+              <PrivateRoute permissions={['manage_dashboard']}>
+                <LeadList />
+              </PrivateRoute>}
+            />
+
+            <Route index path="/lead/create" element={
+              <PrivateRoute permissions={['manage_dashboard']}>
+                <LeadCreateForm />
+              </PrivateRoute>}
+            />
+
+            <Route index path="/lead/:id/edit" element={
+              <PrivateRoute permissions={['manage_dashboard']}>
+                <LeadEditForm />
+              </PrivateRoute>}
             />
 
             {/* Unit */}

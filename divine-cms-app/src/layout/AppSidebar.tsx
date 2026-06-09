@@ -55,6 +55,15 @@ const AppSidebar: React.FC<any> = () => {
       permission:"manage_dashboard"
     },
     {
+      name: "Leads",
+      icon: <ListIcon />,
+      permission: "manage_dashboard",
+      subItems: [
+        { name: "Lead List", path: "/lead/list", pro: false, permission: "manage_dashboard" },
+        { name: "Lead Add", path: "/lead/create", pro: false, permission: "manage_dashboard" },
+      ],
+    },
+    {
       name: "Item & Unit",
       icon: <ListIcon />,
       permission:"manage_item",

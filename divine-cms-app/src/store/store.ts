@@ -17,6 +17,7 @@ import bankReducer from "../modules/account/features/accountSlice";
 import stockReducer from "../modules/stock/features/stockSlice";
 import ledgerReducer from "../modules/ledger/features/ledgerSlice";
 import goldPriceInReducer from "../modules/goldPriceIn/features/goldPriceInSlice";
+import leadReducer from "../modules/lead/features/leadSlice";
 
 export const store = configureStore({
   reducer: {
@@ -37,6 +38,7 @@ export const store = configureStore({
     stock: stockReducer,
     ledger: ledgerReducer,
     goldPriceIn: goldPriceInReducer,
+    lead: leadReducer,
     // other slices...
   },
 });

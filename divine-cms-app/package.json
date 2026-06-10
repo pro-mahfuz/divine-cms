@@ -10,6 +10,7 @@
     "build-shm": "tsc -b && vite build --mode shm",
     "build-fqj": "tsc -b && vite build --mode fqj",
     "build-hog": "tsc -b && vite build --mode hog",
+    "build-dfo": "tsc -b && vite build --mode dfo",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "preview": "vite preview"

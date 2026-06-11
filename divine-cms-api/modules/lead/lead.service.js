@@ -78,6 +78,7 @@ export const createPublicLead = async (req) => {
     ...payload,
     businessId,
     date: payload.date || new Date().toISOString().slice(0, 10),
+    clientName: payload.clientName || "",
   });
 };
 

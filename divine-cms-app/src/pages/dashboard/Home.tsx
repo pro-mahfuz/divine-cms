@@ -54,7 +54,7 @@ export default function Home() {
                           : `${APP_URL}/public/images/logo/logo.svg`
                       }
                       alt="user"
-                      className="w-[310px] h-[100px]"
+                      className="w-[180px] h-[100px]"
                   />
                   : ''
                 }
